@@ -46,25 +46,25 @@ window.addEventListener("DOMContentLoaded", function(){
 		}else{
 			reliableValue = "No"
 		}
-	}	
+//	}	
 	
-	function getCheckBoxValue(){
+//	function getCheckBoxValue(){
 		if(e("job").checked){
 			jobValue = e("job").value;
 		}else{
 			jobValue = "No"
 		}
-	}
+//	}
 	
-	function getCheckBoxValue(){
+//	function getCheckBoxValue(){
 		if(e("replace").checked){
 			replaceValue = e("replace").value;
 		}else{
 			replaceValue = "No"
 		}
-	}
+//	}
 	
-	function getCheckBoxValue(){
+//	function getCheckBoxValue(){
 		if(e("trust").checked){
 			trustValue = e("trust").value;
 		}else{

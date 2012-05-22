@@ -2,15 +2,18 @@
 //MIU 0512
 //Project 3
 
-var parseAccountInfo = function(data){
+/*var parseAccountInfo = function(data){
 		console.log(data);
-};
+};*/
 
-$(document).ready(function(){
+$(document).bind('pageinit',function(){
 
-	var aiform = $("#accountinfo");
+	var aiform = $("#addAccount");
 	
-	aiform.validate({
+	aiform.validate();
+	});
+	
+	/*{
 		invalidHandler: function(form, validator){},
 		submitHandler: function(){
 			var data = aiform.serializeArray();
@@ -37,7 +40,7 @@ $(document).ready(function(){
 
 
 
-
+/*
 
 
 
@@ -292,7 +295,7 @@ window.addEventListener("DOMContentLoaded", function(){
 		var getFname = e("fname");
 		var getLname = e("lname");
 		
-	/*	errMsg.innerHTML = "";
+		errMsg.innerHTML = "";
 			getGroup.style.border = "1px solid black";
 			getFname.style.border = "1px solid black";
 			getLname.style.border = "1px solid black";
@@ -329,10 +332,8 @@ window.addEventListener("DOMContentLoaded", function(){
 			return false;
 		}else{
 			saveData(this.key);
-		}*/
+		}
 	}
-	localStorage.setItem("name", "Hello World!"); //saves to the database, key/value
-document.write(localStorage.getItem("name")); //Hello World!
 	// variable defaults
 	var typeOfMedia = ["--Movies--", "DVD", "VHS", "Blu-Ray", "--Games--", "Xbox 360", "PS3", "Wii" ],
 		sexValue,
@@ -351,3 +352,4 @@ document.write(localStorage.getItem("name")); //Hello World!
 	save.addEventListener("click", validate);
 
 });	
+*/
