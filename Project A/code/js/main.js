@@ -2,9 +2,9 @@
 //MIU 0512
 //Project 3
 
-/*var parseAccountInfo = function(data){
+var parseAccountInfo = function(data){
 		console.log(data);
-};*/
+};
 
 $(document).bind('pageinit',function(){
 
@@ -19,13 +19,13 @@ $(document).bind('pageinit',function(){
 			var data = aiform.serializeArray();
 			parseAccountInfo(data);
 		}
-	});
-
+	};
 
 
 });
 
 
+*/
 
 
 
@@ -40,7 +40,6 @@ $(document).bind('pageinit',function(){
 
 
 
-/*
 
 
 
@@ -352,4 +351,3 @@ window.addEventListener("DOMContentLoaded", function(){
 	save.addEventListener("click", validate);
 
 });	
-*/
