@@ -13,39 +13,17 @@ $(document).bind('pageinit',function(){
 	aiform.validate();
 	});
 	
-	/*{
-		invalidHandler: function(form, validator){},
-		submitHandler: function(){
+	{
+	var	invalidHandler = function (form, validator){},
+		submitHandler = function(){
 			var data = aiform.serializeArray();
 			parseAccountInfo(data);
 		}
-	};
-
-
-});
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	}
+;
 
 //wait till DOM is ready
-window.addEventListener("DOMContentLoaded", function(){
+//window.addEventListener("DOMContentLoaded", function(){
 
 	//get element by ID function
 	function e(x){
@@ -67,7 +45,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
 		}
-		selectLi.appendChild(makeSelect);
+	//	selectLi.appendChild(makeSelect);
 	}
 	
 	//find value of radio button
@@ -86,25 +64,25 @@ window.addEventListener("DOMContentLoaded", function(){
 		}else{
 			reliableValue = "No"
 		}
-	}	
+//	}	
 	
-	function getCheckBoxValue(){
+//	function getCheckBoxValue(){
 		if(e("job").checked){
 			jobValue = e("job").value;
 		}else{
 			jobValue = "No"
 		}
-	}
+//	}
 	
-	function getCheckBoxValue(){
+//	function getCheckBoxValue(){
 		if(e("replace").checked){
 			replaceValue = e("replace").value;
 		}else{
 			replaceValue = "No"
 		}
-	}
+//	}
 	
-	function getCheckBoxValue(){
+//	function getCheckBoxValue(){
 		if(e("trust").checked){
 			trustValue = e("trust").value;
 		}else{
@@ -149,7 +127,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			item.job =["Do they have a job?", jobValue];
 			item.replace =["If broken, could they replace it?", replaceValue];
 			item.trust =["Do you fully trust them?", trustValue];
-			item.group =["Group:", e("groups").value];
+		//	item.group =["Group:", e("groups").value];
 			item.dname =["Disc Name:", e("dname").value];
 			item.value =["Value:", e("value").value];
 			item.ldate =["Date Lent:", e("ldate").value];
@@ -182,7 +160,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var obj = JSON.parse(value);
 			var makeSubList = document.createElement("ul");
 			makeli.appendChild(makeSubList);
-			getImage(obj.group[1], makeSubList);
+	//		getImage(obj.group[1], makeSubList);
 			for(var n in obj){
 				var makeSubli = document.createElement("li");
 				makeSubList.appendChild(makeSubli);
@@ -290,17 +268,17 @@ window.addEventListener("DOMContentLoaded", function(){
 	}
 	
 	function validate(d){
-		var getGroup = e("groups");
+		var getDname = e("dname");
 		var getFname = e("fname");
 		var getLname = e("lname");
 		
-		errMsg.innerHTML = "";
+	/*	errMsg.innerHTML = "";
 			getGroup.style.border = "1px solid black";
 			getFname.style.border = "1px solid black";
 			getLname.style.border = "1px solid black";
-
+*/
 		var message = [];
-		if(getGroup.value === "--Movies--"){
+	/*	if(getGroup.value === "--Movies--"){
 			var groupError = "Please Pick A Disc Format.";
 			getGroup.style.border = "1px solid red";
 			message.push(groupError);
@@ -309,7 +287,7 @@ window.addEventListener("DOMContentLoaded", function(){
 			var groupError = "Please Pick A Disc Format.";
 			getGroup.style.border = "1px solid red";
 			message.push(groupError);
-		}
+		} */
 		if(getFname.value === ""){
 			var fnameError = "Please Type in First Name.";
 			getFname.style.border = "1px solid red";
@@ -320,19 +298,24 @@ window.addEventListener("DOMContentLoaded", function(){
 			getLname.style.border = "1px solid red";
 			message.push(lnameError);
 		}
+		if(getDname.value === ""){
+			var DnameError = "Please Type in Last Name.";
+			getDname.style.border = "1px solid red";
+			message.push(DnameError);
+		}
 		
 		if (message.length >= 1){
 			for(var i=0, j=message.length; i < j; i++){
 				var text = document.createElement("li");
 				text.innerHTML = message[i];
-				errMsg.appendChild(text);
+//				errMsg.appendChild(text);
 			}
 			d.preventDefault()
 			return false;
 		}else{
 			saveData(this.key);
 		}
-	}
+	} 
 	// variable defaults
 	var typeOfMedia = ["--Movies--", "DVD", "VHS", "Blu-Ray", "--Games--", "Xbox 360", "PS3", "Wii" ],
 		sexValue,
@@ -342,6 +325,8 @@ window.addEventListener("DOMContentLoaded", function(){
 		trustValue = "No",
 		errMsg = e("errors")
 	;
+	wheelHouse();
+	
 	//links and submit button
 	var removeLink = e ("remove");
 	removeLink.addEventListener("click", deleteData);
@@ -350,4 +335,3 @@ window.addEventListener("DOMContentLoaded", function(){
 	var save = e("submit");
 	save.addEventListener("click", validate);
 
-});	
