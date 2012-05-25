@@ -38,13 +38,13 @@ $(document).bind('pageinit',function(){
 			makeSelect = document.createElement("select");
 			makeSelect.setAttribute("id", "groups");
 		//comeback to type of media
-		for (var i=0, j=typeOfMedia.length; i<j; i++){
+		/*for (var i=0, j=typeOfMedia.length; i<j; i++){
 			var makeOption = document.createElement("option");
 			var optText = typeOfMedia[i];
 			makeOption.setAttribute("value", optText);
 			makeOption.innerHTML = optText;
 			makeSelect.appendChild(makeOption);
-		}
+		}*/
 	//	selectLi.appendChild(makeSelect);
 	}
 	
@@ -232,7 +232,6 @@ $(document).bind('pageinit',function(){
 		if(item.trust[1] == "Yes"){
 			e("trust").setAttribute("checked", "checked");
 		}
-		e("groups").value = item.group[1];
 		e("dname").value = item.dname[1];
 		e("value").value = item.value[1];
 		e("ldate").value = item.ldate[1];
@@ -272,11 +271,11 @@ $(document).bind('pageinit',function(){
 		var getFname = e("fname");
 		var getLname = e("lname");
 		
-	/*	errMsg.innerHTML = "";
-			getGroup.style.border = "1px solid black";
+	//	errMsg.innerHTML = "";
+			getDname.style.border = "1px solid black";
 			getFname.style.border = "1px solid black";
 			getLname.style.border = "1px solid black";
-*/
+
 		var message = [];
 	/*	if(getGroup.value === "--Movies--"){
 			var groupError = "Please Pick A Disc Format.";
@@ -317,8 +316,7 @@ $(document).bind('pageinit',function(){
 		}
 	} 
 	// variable defaults
-	var typeOfMedia = ["--Movies--", "DVD", "VHS", "Blu-Ray", "--Games--", "Xbox 360", "PS3", "Wii" ],
-		sexValue,
+	var sexValue,
 		reliableValue = "No",
 		jobValue = "No",
 		replaceValue = "No",
